@@ -294,6 +294,44 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            position: relative;
+        }
+
+        .magic-rings-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px;
+            height: 400px;
+            z-index: 0;
+            opacity: 0.4;
+        }
+
+        .magic-rings-container svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .resonance-text {
+            position: relative;
+            z-index: 1;
+        }
+
+        .resonance-word {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 48px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #fff;
+            text-transform: uppercase;
+            z-index: 2;
+            opacity: 0.9;
+            text-align: center;
+            pointer-events: none;
         }
 
         .chapter-text {
@@ -512,6 +550,37 @@
             color: rgba(255, 255, 255, 0.5);
         }
 
+        /* Magic Rings Animation */
+        @keyframes ring-rotate-1 {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes ring-rotate-2 {
+            0% { transform: rotate(360deg); }
+            100% { transform: rotate(0deg); }
+        }
+
+        @keyframes ring-rotate-3 {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .magic-ring-1 {
+            animation: ring-rotate-1 8s linear infinite;
+            transform-origin: center;
+        }
+
+        .magic-ring-2 {
+            animation: ring-rotate-2 10s linear infinite;
+            transform-origin: center;
+        }
+
+        .magic-ring-3 {
+            animation: ring-rotate-3 12s linear infinite;
+            transform-origin: center;
+        }
+
         /* Theme Switcher */
         .theme-switcher {
             position: fixed;
@@ -705,7 +774,31 @@
         </div>
 
         <div class="chapters-content">
-            <div>
+            <!-- Magic Rings Background -->
+            <div class="magic-rings-container">
+                <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Ring 1 -->
+                    <g class="magic-ring-1">
+                        <circle cx="200" cy="200" r="120" fill="none" stroke="#d9644a" stroke-width="2" opacity="0.8"/>
+                        <circle cx="200" cy="80" r="6" fill="#d9644a" opacity="0.8"/>
+                    </g>
+                    <!-- Ring 2 -->
+                    <g class="magic-ring-2">
+                        <circle cx="200" cy="200" r="80" fill="none" stroke="#fff" stroke-width="1.5" opacity="0.6"/>
+                        <circle cx="280" cy="200" r="5" fill="#fff" opacity="0.6"/>
+                    </g>
+                    <!-- Ring 3 -->
+                    <g class="magic-ring-3">
+                        <circle cx="200" cy="200" r="150" fill="none" stroke="#d9644a" stroke-width="1" opacity="0.4"/>
+                        <circle cx="200" cy="50" r="4" fill="#d9644a" opacity="0.4"/>
+                    </g>
+                    <!-- Center decorative circle -->
+                    <circle cx="200" cy="200" r="30" fill="none" stroke="#fff" stroke-width="1" opacity="0.3"/>
+                </svg>
+                <div class="resonance-word">Resonance</div>
+            </div>
+
+            <div class="resonance-text">
                 <div class="chapter-text" id="chapter-text">Autumn Symphony</div>
                 <div class="chapter-description" id="chapter-desc">
                     A collection of cinematic deep house compositions designed to immerse you in the warmth of autumn. Live countdown to the next event.
@@ -732,6 +825,7 @@
                     </div>
                 </div>
                 <button class="btn btn-primary" onclick="alert('Upcoming events')">Upcoming Events</button>
+            </div>
             </div>
         </div>
 
