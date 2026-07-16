@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Future Frequencies - Immersive Deep House Experiences</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Shared Styles */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 48px;
+            background: transparent;
+        }
+
+        .navbar.light .logo {
+            color: #333;
+        }
+
+        .navbar.dark .logo {
+            color: #fff;
+        }
+
+        .logo {
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+
+        .menu-toggle {
+            width: 44px;
+            height: 44px;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: currentColor;
+            transition: all 0.3s ease;
+        }
+
+        .navbar.light .menu-toggle {
+            color: #333;
+        }
+
+        .navbar.dark .menu-toggle {
+            color: #fff;
+        }
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(10px, 10px);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        /* Menu */
+        .menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 999;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 100px 40px;
+        }
+
+        .menu.active {
+            display: flex;
+        }
+
+        .menu a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 32px;
+            font-weight: 600;
+            margin: 24px 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .menu a:hover {
+            opacity: 0.7;
+        }
+
+        /* Section Container */
+        .page-section {
+            display: none;
+            width: 100%;
+            min-height: 100vh;
+        }
+
+        .page-section.active {
+            display: flex;
+        }
+
+        /* Option 1a: Editorial Warmth */
+        .editorial-warmth {
+            flex-direction: column;
+            background: linear-gradient(45deg, #d4c4a8 25%, transparent 25%, transparent 75%, #d4c4a8 75%, #d4c4a8) 0 0,
+                        linear-gradient(45deg, #d4c4a8 25%, transparent 25%, transparent 75%, #d4c4a8 75%, #d4c4a8) 20px 20px;
+            background-size: 40px 40px;
+            background-color: #c5b59f;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-video-area {
+            flex: 1;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 80px;
+            position: relative;
+        }
+
+        .video-placeholder {
+            width: 100%;
+            height: 400px;
+            background: rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 14px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .hero-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 60px 100px;
+            color: #fff;
+        }
+
+        .hero-headline {
+            font-size: 72px;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            max-width: 600px;
+        }
+
+        .hero-subheading {
+            font-size: 18px;
+            line-height: 1.6;
+            max-width: 400px;
+            margin-bottom: 48px;
+            opacity: 0.95;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn {
+            padding: 16px 32px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: #d9644a;
+            color: #fff;
+            border: 2px solid #d9644a;
+        }
+
+        .btn-primary:hover {
+            background: transparent;
+            color: #d9644a;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #fff;
+            border: 2px solid #fff;
+        }
+
+        .btn-secondary:hover {
+            background: #fff;
+            color: #333;
+            transform: translateY(-2px);
+        }
+
+        /* Option 1b: Midnight Chapters */
+        .midnight-chapters {
+            flex-direction: column;
+            background: #0a0a0a;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .chapters-header {
+            padding-top: 100px;
+            padding-bottom: 40px;
+            padding-left: 100px;
+            padding-right: 100px;
+        }
+
+        .chapters-title {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 40px;
+        }
+
+        .chapter-tabs {
+            display: flex;
+            gap: 0;
+            margin-bottom: 60px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .chapter-tab {
+            padding: 16px 32px;
+            background: transparent;
+            border: none;
+            color: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .chapter-tab.active {
+            color: #fff;
+            border-bottom-color: #d9644a;
+        }
+
+        .chapter-tab:hover {
+            color: #fff;
+        }
+
+        .chapters-content {
+            flex: 1;
+            padding: 0 100px 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .chapter-text {
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1.2;
+            max-width: 600px;
+            margin-bottom: 60px;
+        }
+
+        .chapter-description {
+            font-size: 16px;
+            line-height: 1.8;
+            opacity: 0.8;
+            max-width: 500px;
+            margin-bottom: 60px;
+        }
+
+        .countdown {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .countdown-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .countdown-value {
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .countdown-label {
+            font-size: 12px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            opacity: 0.6;
+        }
+
+        .btn-secondary.dark {
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-secondary.dark:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #fff;
+        }
+
+        /* Theme Switcher */
+        .theme-switcher {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            z-index: 500;
+            display: flex;
+            gap: 12px;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            padding: 12px;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .theme-btn {
+            width: 40px;
+            height: 40px;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            background: transparent;
+            color: #fff;
+        }
+
+        .theme-btn.active {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .theme-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 16px 24px;
+            }
+
+            .hero-content {
+                padding: 40px 24px;
+            }
+
+            .hero-headline {
+                font-size: 36px;
+            }
+
+            .hero-subheading {
+                font-size: 16px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .chapters-header {
+                padding-left: 24px;
+                padding-right: 24px;
+            }
+
+            .chapters-title {
+                font-size: 32px;
+            }
+
+            .chapter-tabs {
+                flex-wrap: wrap;
+            }
+
+            .chapter-tab {
+                padding: 12px 20px;
+            }
+
+            .chapters-content {
+                padding: 0 24px 60px;
+            }
+
+            .chapter-text {
+                font-size: 28px;
+            }
+
+            .countdown {
+                gap: 20px;
+            }
+
+            .countdown-value {
+                font-size: 32px;
+            }
+
+            .theme-switcher {
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar light">
+        <div class="logo">Future Frequencies</div>
+        <button class="menu-toggle" id="menuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- Menu -->
+    <div class="menu" id="menu">
+        <a href="#" onclick="showSection('editorial', event)">Editorial Warmth</a>
+        <a href="#" onclick="showSection('midnight', event)">Midnight Chapters</a>
+        <a href="#upcoming">Upcoming Events</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <!-- Page Sections -->
+    <section class="page-section editorial-warmth active" id="editorial-section">
+        <div class="hero-video-area">
+            <div class="video-placeholder">Cinematic Hero Video — Sound System in Warm Haze</div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-headline">Designed To Be Felt.</h1>
+            <p class="hero-subheading">Immersive deep house experiences, powered by beautiful sound.</p>
+            <div class="cta-buttons">
+                <button class="btn btn-primary" onclick="alert('Upcoming events')">Upcoming Events</button>
+                <button class="btn btn-secondary" onclick="alert('Watch the journey')">Watch The Journey</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="page-section midnight-chapters" id="midnight-section">
+        <div class="chapters-header">
+            <h1 class="chapters-title">Midnight Chapters</h1>
+            <div class="chapter-tabs">
+                <button class="chapter-tab active" data-chapter="autumn" onclick="switchChapter(this)">Autumn Series</button>
+                <button class="chapter-tab" data-chapter="winter" onclick="switchChapter(this)">Winter Series</button>
+                <button class="chapter-tab" data-chapter="spring" onclick="switchChapter(this)">Spring Series</button>
+            </div>
+        </div>
+
+        <div class="chapters-content">
+            <div>
+                <div class="chapter-text" id="chapter-text">Autumn Symphony</div>
+                <div class="chapter-description" id="chapter-desc">
+                    A collection of cinematic deep house compositions designed to immerse you in the warmth of autumn. Live countdown to the next event.
+                </div>
+            </div>
+
+            <div>
+                <div class="countdown">
+                    <div class="countdown-item">
+                        <div class="countdown-value" id="days">00</div>
+                        <div class="countdown-label">Days</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-value" id="hours">00</div>
+                        <div class="countdown-label">Hours</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-value" id="minutes">00</div>
+                        <div class="countdown-label">Minutes</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-value" id="seconds">00</div>
+                        <div class="countdown-label">Seconds</div>
+                    </div>
+                </div>
+                <button class="btn btn-primary" onclick="alert('Upcoming events')">Upcoming Events</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Theme Switcher -->
+    <div class="theme-switcher">
+        <button class="theme-btn active" onclick="showSection('editorial', event)" title="Editorial Warmth">1a</button>
+        <button class="theme-btn" onclick="showSection('midnight', event)" title="Midnight Chapters">1b</button>
+    </div>
+
+    <script>
+        // Menu toggle functionality
+        const menuToggle = document.getElementById('menuToggle');
+        const menu = document.getElementById('menu');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            menu.classList.toggle('active');
+        });
+
+        // Close menu when clicking a link
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                menu.classList.remove('active');
+            });
+        });
+
+        // Section switching
+        function showSection(section, event) {
+            if (event) event.preventDefault();
+
+            const sections = document.querySelectorAll('.page-section');
+            const navbar = document.querySelector('.navbar');
+            const themeBtns = document.querySelectorAll('.theme-btn');
+
+            sections.forEach(s => s.classList.remove('active'));
+            themeBtns.forEach(b => b.classList.remove('active'));
+
+            if (section === 'editorial') {
+                document.getElementById('editorial-section').classList.add('active');
+                navbar.classList.remove('dark');
+                navbar.classList.add('light');
+                themeBtns[0].classList.add('active');
+            } else if (section === 'midnight') {
+                document.getElementById('midnight-section').classList.add('active');
+                navbar.classList.remove('light');
+                navbar.classList.add('dark');
+                themeBtns[1].classList.add('active');
+            }
+        }
+
+        // Chapter switching
+        const chapterData = {
+            autumn: {
+                text: 'Autumn Symphony',
+                desc: 'A collection of cinematic deep house compositions designed to immerse you in the warmth of autumn. Live countdown to the next event.'
+            },
+            winter: {
+                text: 'Winter Resonance',
+                desc: 'Deep, introspective tracks that capture the quiet beauty of winter nights. Premium sound design meets visual storytelling.'
+            },
+            spring: {
+                text: 'Spring Awakening',
+                desc: 'Energetic and uplifting compositions that celebrate renewal. A journey through emerging beats and harmonic landscapes.'
+            }
+        };
+
+        function switchChapter(button) {
+            document.querySelectorAll('.chapter-tab').forEach(t => t.classList.remove('active'));
+            button.classList.add('active');
+
+            const chapter = button.dataset.chapter;
+            const data = chapterData[chapter];
+
+            document.getElementById('chapter-text').textContent = data.text;
+            document.getElementById('chapter-desc').textContent = data.desc;
+        }
+
+        // Countdown timer
+        function updateCountdown() {
+            const targetDate = new Date();
+            targetDate.setDate(targetDate.getDate() + 7);
+            targetDate.setHours(20, 0, 0, 0);
+
+            const now = new Date().getTime();
+            const distance = targetDate.getTime() - now;
+
+            if (distance > 0) {
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById('days').textContent = String(days).padStart(2, '0');
+                document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+                document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+                document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+            }
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+        // Close menu when pressing Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                menuToggle.classList.remove('active');
+                menu.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
