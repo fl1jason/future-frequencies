@@ -1,4 +1,5 @@
 import React from 'react';
+import storyImg from '../assets/images/Founded by a soundman from West London.png';
 import './About.css';
 
 interface AboutProps {
@@ -28,12 +29,7 @@ export default function About({ theme = 'default' }: AboutProps) {
 
         {/* Image Column */}
         <div className="about-image">
-          <div className="image-placeholder">
-            <svg viewBox="0 0 1 1" xmlns="http://www.w3.org/2000/svg">
-              <rect width="1" height="1" fill="currentColor" />
-            </svg>
-            <span>documentary photo — Ess building the system</span>
-          </div>
+          <img src={storyImg.src} alt="Founded by a soundman from West London" className="story-image" />
         </div>
       </div>
     </section>
