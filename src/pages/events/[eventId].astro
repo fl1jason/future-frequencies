@@ -1,0 +1,20 @@
+---
+import Base from '@layouts/Base.astro';
+import EventDetails from '@components/EventDetails';
+import { events } from '@data/events';
+
+export async function getStaticPaths() {
+  return events.map((event) => ({
+    params: { eventId: event.id },
+    props: { event },
+  }));
+}
+
+const { eventId } = Astro.params;
+const event = events.find((e) => e.id === eventId);
+const title = event ? `${event.title} — Future Frequencies` : 'Event Not Found';
+---
+
+<Base title={title} description={event?.desc}>
+  <EventDetails client:load eventId={eventId || ''} />
+</Base>

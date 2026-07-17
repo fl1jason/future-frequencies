@@ -126,9 +126,14 @@ export default function AutumnSeries({ theme = 'default' }: AutumnSeriesProps) {
                   <div className="chapter-details-panel">
                     <div className="event-tag">{event.tag}</div>
                     <p className="event-description">{event.desc}</p>
-                    <a href={event.url} className="event-cta" style={{ '--cta-color': primaryColor } as React.CSSProperties}>
-                      TICKETS — {event.platform} →
-                    </a>
+                    <div className="event-cta-group">
+                      <a href={event.url} className="event-cta" style={{ '--cta-color': primaryColor } as React.CSSProperties}>
+                        TICKETS — {event.platform} →
+                      </a>
+                      <a href={`/events/${event.id}`} className="event-cta secondary" style={{ '--cta-color': primaryColor } as React.CSSProperties}>
+                        FIND OUT MORE →
+                      </a>
+                    </div>
                   </div>
                 </div>
               )
