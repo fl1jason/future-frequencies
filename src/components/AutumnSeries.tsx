@@ -108,14 +108,18 @@ export default function AutumnSeries({ theme = 'default' }: AutumnSeriesProps) {
             {events.map((event, index) => (
               activeChapter === index && (
                 <div key={event.id} className="chapter-content active">
-                  {/* Artwork Placeholder */}
+                  {/* Artwork */}
                   <div className="chapter-artwork">
-                    <div className="artwork-placeholder">
-                      <svg viewBox="0 0 1 1" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="1" height="1" fill="currentColor" />
-                      </svg>
-                      <span>event artwork — {event.title}</span>
-                    </div>
+                    {event.artwork ? (
+                      <img src={event.artwork} alt={event.title} className="event-image" />
+                    ) : (
+                      <div className="artwork-placeholder">
+                        <svg viewBox="0 0 1 1" xmlns="http://www.w3.org/2000/svg">
+                          <rect width="1" height="1" fill="currentColor" />
+                        </svg>
+                        <span>event artwork — {event.title}</span>
+                      </div>
+                    )}
                   </div>
 
                   {/* Event Details */}

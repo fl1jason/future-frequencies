@@ -200,6 +200,13 @@
   z-index: 1;
 }
 
+.event-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 .chapter-details-panel {
   display: flex;
   flex-direction: column;

@@ -1,3 +1,8 @@
+import equinoxImg from '../assets/images/events/equinox.png';
+import halloweenImg from '../assets/images/events/halloween.png';
+import resonanceImg from '../assets/images/events/resonance.png';
+import convergenceImg from '../assets/images/events/convergence.png';
+
 export interface Event {
   id: string;
   num: string;
@@ -22,7 +27,7 @@ export const events: Event[] = [
     desc: 'Celebrating the transition into autumn through deep house, immersive sound and intentional atmosphere. The first chapter sets the tone for the season ahead.',
     platform: 'Eventbrite',
     url: '#events/equinox',
-    artwork: undefined,
+    artwork: equinoxImg.src,
   },
   {
     id: 'halloween',
@@ -34,7 +39,7 @@ export const events: Event[] = [
     desc: 'A darker chapter featuring theatrical visuals, immersive lighting and deep underground grooves. Fancy dress encouraged — come as your underground alter ego.',
     platform: 'Skiddle',
     url: '#events/halloween',
-    artwork: undefined,
+    artwork: halloweenImg.src,
   },
   {
     id: 'resonance',
@@ -46,7 +51,7 @@ export const events: Event[] = [
     desc: 'A night dedicated to the physical feeling of music through a carefully tuned sound system, deep frequencies and immersive production. Feel the bass, not just hear it.',
     platform: 'Dice',
     url: '#events/resonance',
-    artwork: undefined,
+    artwork: resonanceImg.src,
   },
   {
     id: 'convergence',
@@ -58,7 +63,7 @@ export const events: Event[] = [
     desc: 'A celebration of the community built throughout the season, bringing together everyone who has shared the journey. The finale we\'ve all been waiting for.',
     platform: 'Eventbrite',
     url: '#events/convergence',
-    artwork: undefined,
+    artwork: convergenceImg.src,
   },
 ];
 
