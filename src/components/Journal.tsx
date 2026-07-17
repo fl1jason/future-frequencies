@@ -19,8 +19,9 @@ export default function Journal({ theme = 'default' }: JournalProps) {
           {articles.map((article) => (
             <a
               key={article.id}
-              href={`#journal/${article.id}`}
+              href={`/journal/${article.id}`}
               className="journal-card"
+              rel="prefetch"
             >
               <div className="article-image">
                 {article.image ? (

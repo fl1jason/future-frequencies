@@ -1,0 +1,489 @@
+.events-page {
+  background: var(--color-bg-dark);
+  min-height: 100vh;
+}
+
+/* Hero Section */
+.events-hero {
+  padding: var(--space-10xl) var(--space-6xl);
+  text-align: center;
+  border-bottom: 1px solid var(--color-border-dark);
+  animation: fadeIn 0.8s ease-out;
+}
+
+.events-hero-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.events-hero-label {
+  font-size: var(--text-xs);
+  letter-spacing: var(--ls-ultra);
+  color: var(--color-primary);
+  margin-bottom: var(--space-lg);
+  text-transform: uppercase;
+  font-weight: var(--weight-semibold);
+}
+
+.events-hero-title {
+  font-family: var(--font-display);
+  font-size: var(--text-6xl);
+  font-weight: 400;
+  color: var(--color-text-primary);
+  margin: 0 0 var(--space-lg) 0;
+  line-height: var(--lh-tight);
+}
+
+.events-hero-description {
+  font-size: var(--text-lg);
+  color: var(--color-text-secondary);
+  margin: 0;
+  line-height: var(--lh-normal);
+}
+
+/* Next Event Section */
+.next-event-section {
+  padding: var(--space-10xl) var(--space-6xl);
+  border-bottom: 1px solid var(--color-border-dark);
+}
+
+.next-event-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.next-event-label {
+  font-size: var(--text-xs);
+  letter-spacing: var(--ls-ultra);
+  color: var(--color-primary);
+  margin-bottom: var(--space-lg);
+  text-transform: uppercase;
+  font-weight: var(--weight-semibold);
+}
+
+.featured-event {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-8xl);
+  align-items: center;
+}
+
+.featured-event-image {
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--color-bg-darker);
+}
+
+.featured-event-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.featured-event-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.featured-event-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+.event-number {
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-bold);
+  color: var(--color-primary);
+  font-family: var(--font-display);
+}
+
+.event-date {
+  font-size: var(--text-xs);
+  letter-spacing: var(--ls-wide);
+  color: var(--color-text-tertiary);
+  text-transform: uppercase;
+}
+
+.featured-event-title {
+  font-family: var(--font-display);
+  font-size: var(--text-5xl);
+  font-weight: 400;
+  color: var(--color-text-primary);
+  margin: 0;
+  line-height: var(--lh-tight);
+}
+
+.featured-event-tag {
+  font-size: var(--text-lg);
+  color: var(--color-accent-warm);
+  margin: 0;
+  font-weight: var(--weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-wide);
+}
+
+.featured-event-desc {
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  margin: 0;
+  line-height: var(--lh-normal);
+  max-width: 500px;
+}
+
+.featured-event-ctas {
+  display: flex;
+  gap: var(--space-lg);
+  margin-top: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+/* Events Grid Section */
+.events-grid-section {
+  padding: var(--space-10xl) var(--space-6xl);
+  border-bottom: 1px solid var(--color-border-dark);
+}
+
+.events-grid-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.events-grid-title {
+  font-family: var(--font-display);
+  font-size: var(--text-4xl);
+  font-weight: 400;
+  color: var(--color-text-primary);
+  margin: 0 0 var(--space-6xl) 0;
+  line-height: var(--lh-tight);
+}
+
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: var(--space-6xl);
+}
+
+.event-card {
+  display: flex;
+  flex-direction: column;
+  animation: ffSlideUp 0.6s ease both;
+}
+
+.event-card:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.event-card:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.event-card:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.event-card-image {
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--color-bg-darker);
+  margin-bottom: var(--space-lg);
+}
+
+.event-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.event-card:hover .event-card-image img {
+  transform: scale(1.05);
+}
+
+.event-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.event-card-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+.event-card-title {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: 400;
+  color: var(--color-text-primary);
+  margin: 0;
+  line-height: var(--lh-tight);
+}
+
+.event-card-tag {
+  font-size: var(--text-sm);
+  color: var(--color-accent-warm);
+  margin: 0;
+  font-weight: var(--weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-wide);
+}
+
+.event-card-desc {
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  margin: 0;
+  line-height: var(--lh-normal);
+}
+
+.event-card-ctas {
+  display: flex;
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+  flex-wrap: wrap;
+}
+
+/* Buttons */
+.btn {
+  padding: var(--space-md) var(--space-lg);
+  border: none;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: var(--ls-wide);
+  cursor: pointer;
+  transition: all var(--duration-base) var(--easing-ease-out);
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: var(--color-bg-dark);
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+}
+
+.btn-secondary:hover {
+  background: var(--color-primary);
+  color: var(--color-bg-dark);
+}
+
+.btn-small {
+  padding: var(--space-sm) var(--space-md);
+  font-size: var(--text-xs);
+}
+
+.btn-lg {
+  padding: var(--space-lg) var(--space-3xl);
+  font-size: var(--text-base);
+}
+
+.image-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg-darker);
+  color: var(--color-text-tertiary);
+}
+
+/* Season Pass Banner */
+.season-pass-banner {
+  padding: var(--space-10xl) var(--space-6xl);
+  text-align: center;
+}
+
+.season-pass-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.season-pass-title {
+  font-family: var(--font-display);
+  font-size: var(--text-5xl);
+  font-weight: 400;
+  color: var(--color-text-primary);
+  margin: 0 0 var(--space-lg) 0;
+  line-height: var(--lh-tight);
+}
+
+.season-pass-description {
+  font-size: var(--text-lg);
+  color: var(--color-text-secondary);
+  margin: 0 0 var(--space-3xl) 0;
+  line-height: var(--lh-normal);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .events-hero {
+    padding: var(--space-8xl) var(--space-4xl);
+  }
+
+  .next-event-section {
+    padding: var(--space-8xl) var(--space-4xl);
+  }
+
+  .events-grid-section {
+    padding: var(--space-8xl) var(--space-4xl);
+  }
+
+  .featured-event {
+    gap: var(--space-6xl);
+  }
+
+  .events-grid {
+    gap: var(--space-4xl);
+  }
+
+  .events-hero-title {
+    font-size: var(--text-5xl);
+  }
+
+  .featured-event-title {
+    font-size: var(--text-4xl);
+  }
+
+  .season-pass-banner {
+    padding: var(--space-8xl) var(--space-4xl);
+  }
+
+  .season-pass-title {
+    font-size: var(--text-4xl);
+  }
+}
+
+@media (max-width: 768px) {
+  .events-hero {
+    padding: var(--space-6xl) var(--space-lg);
+  }
+
+  .next-event-section {
+    padding: var(--space-6xl) var(--space-lg);
+  }
+
+  .events-grid-section {
+    padding: var(--space-6xl) var(--space-lg);
+  }
+
+  .featured-event {
+    grid-template-columns: 1fr;
+    gap: var(--space-4xl);
+  }
+
+  .events-hero-title {
+    font-size: var(--text-4xl);
+  }
+
+  .featured-event-title {
+    font-size: var(--text-3xl);
+  }
+
+  .event-card-title {
+    font-size: var(--text-2xl);
+  }
+
+  .events-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-4xl);
+  }
+
+  .featured-event-ctas,
+  .event-card-ctas {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .season-pass-banner {
+    padding: var(--space-6xl) var(--space-lg);
+  }
+
+  .season-pass-title {
+    font-size: var(--text-3xl);
+  }
+
+  .season-pass-description {
+    font-size: var(--text-base);
+  }
+}
+
+@media (max-width: 480px) {
+  .events-hero {
+    padding: var(--space-5xl) var(--space-lg);
+  }
+
+  .next-event-section {
+    padding: var(--space-5xl) var(--space-lg);
+  }
+
+  .events-grid-section {
+    padding: var(--space-5xl) var(--space-lg);
+  }
+
+  .events-hero-title {
+    font-size: var(--text-3xl);
+  }
+
+  .featured-event-title {
+    font-size: var(--text-2xl);
+  }
+
+  .event-card-title {
+    font-size: var(--text-lg);
+  }
+
+  .featured-event-desc,
+  .event-card-desc {
+    font-size: var(--text-sm);
+  }
+
+  .season-pass-banner {
+    padding: var(--space-4xl) var(--space-lg);
+  }
+
+  .season-pass-title {
+    font-size: var(--text-2xl);
+  }
+
+  .season-pass-description {
+    font-size: var(--text-sm);
+  }
+
+  .events-grid-title {
+    font-size: var(--text-2xl);
+  }
+}

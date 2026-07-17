@@ -1,0 +1,21 @@
+---
+import Base from '@layouts/Base.astro';
+import ArticleDetail from '@components/ArticleDetail';
+import { articles } from '@data/journal';
+
+export async function getStaticPaths() {
+  return articles.map((article) => ({
+    params: { id: article.id },
+    props: { article },
+  }));
+}
+
+const { id } = Astro.params;
+const article = articles.find((a) => a.id === id);
+const title = article ? `${article.title} — Future Frequencies` : 'Article Not Found';
+const description = article?.excerpt || 'Read the latest from Future Frequencies Journal';
+---
+
+<Base title={title} description={description}>
+  <ArticleDetail client:load articleId={id || ''} />
+</Base>
