@@ -2,13 +2,13 @@
 
 :root {
   /* Primary Colors */
-  --color-primary: #c1633f;
-  --color-primary-light: #e08a5e;
-  --color-primary-dark: #8a4530;
+  --color-primary: #c96f4a;
+  --color-primary-light: #e0956a;
+  --color-primary-dark: #9a5035;
 
   /* Background Colors */
-  --color-bg-dark: #17140f;
-  --color-bg-darker: #100e0a;
+  --color-bg-dark: #181310;
+  --color-bg-darker: #141210;
   --color-bg-light: #221f1a;
 
   /* Text Colors */
@@ -19,7 +19,7 @@
 
   /* Accent Colors */
   --color-accent-warm: #8a8a5e;
-  --color-accent-copper: #c1633f;
+  --color-accent-copper: #c96f4a;
   --color-accent-sand: #d4a574;
   --color-accent-olive: #5a5a3a;
 
@@ -29,12 +29,12 @@
   --color-border-dark: rgba(243, 237, 228, 0.1);
 
   /* Overlay Colors */
-  --color-overlay-subtle: rgba(184, 98, 60, 0.16);
-  --color-overlay-dark: rgba(16, 14, 10, 0.8);
+  --color-overlay-subtle: rgba(201, 111, 74, 0.16);
+  --color-overlay-dark: rgba(20, 18, 16, 0.8);
 
   /* Typography */
-  --font-display: 'League Spartan', sans-serif;
-  --font-body: 'Inter', sans-serif;
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-body: 'IBM Plex Sans', sans-serif;
   --font-mono: ui-monospace, Menlo, monospace;
 
   /* Font Sizes */
@@ -125,6 +125,9 @@
   --color-primary-light: #6ba3eb;
   --color-primary-dark: #2e5db8;
 
+  --color-bg-dark: #181310;
+  --color-bg-darker: #141210;
+
   --color-accent-warm: #5a7a8a;
   --color-accent-copper: #4a90e2;
   --color-accent-sand: #7a9db8;
@@ -136,6 +139,9 @@
   --color-primary: #d4a574;
   --color-primary-light: #e0b88a;
   --color-primary-dark: #a67c4d;
+
+  --color-bg-dark: #181310;
+  --color-bg-darker: #141210;
 
   --color-accent-warm: #a89a5e;
   --color-accent-copper: #d4a574;
@@ -167,30 +173,32 @@ body {
 h1 {
   font-family: var(--font-display);
   font-size: var(--text-7xl);
-  font-weight: var(--weight-bold);
+  font-weight: 400;
   line-height: var(--lh-tight);
-  letter-spacing: var(--ls-tight);
+  letter-spacing: 0.01em;
 }
 
 h2 {
   font-family: var(--font-display);
   font-size: var(--text-5xl);
-  font-weight: var(--weight-bold);
+  font-weight: 400;
   line-height: var(--lh-compact);
-  letter-spacing: var(--ls-normal);
+  letter-spacing: 0.01em;
 }
 
 h3 {
   font-family: var(--font-display);
   font-size: var(--text-3xl);
-  font-weight: var(--weight-bold);
+  font-weight: 400;
   line-height: var(--lh-normal);
+  letter-spacing: 0.01em;
 }
 
 h4 {
   font-family: var(--font-display);
   font-size: var(--text-2xl);
-  font-weight: var(--weight-semibold);
+  font-weight: 400;
+  letter-spacing: 0.01em;
 }
 
 p {
