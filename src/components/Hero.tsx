@@ -77,10 +77,6 @@ export default function Hero({ theme = 'default' }: HeroProps) {
           </a>
         </div>
       </div>
-
-      <div className="hero-credit">
-        <span>cinematic hero experience — immersive sound system</span>
-      </div>
     </section>
   );
 }
