@@ -16,5 +16,45 @@ const title = event ? `${event.title} — Future Frequencies` : 'Event Not Found
 ---
 
 <Base title={title} description={event?.desc}>
+  {event && (
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": event.title,
+      "description": event.desc,
+      "url": `https://www.resonanceevents.co.uk/events/${event.id}`,
+      "image": event.artwork,
+      "startDate": `${event.date}T20:00:00Z`,
+      "endDate": `${event.date}T04:00:00Z`,
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "location": {
+        "@type": "Place",
+        "name": "OMNOM Birmingham",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Birmingham",
+          "addressCountry": "GB"
+        }
+      },
+      "organizer": {
+        "@type": "Organization",
+        "name": "Future Frequencies",
+        "url": "https://www.resonanceevents.co.uk"
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": event.url,
+        "price": "TBD",
+        "priceCurrency": "GBP",
+        "availability": "https://schema.org/InStock",
+        "seller": {
+          "@type": "Organization",
+          "name": "Future Frequencies"
+        }
+      }
+    })}></script>
+  )}
+
   <EventDetails client:load eventId={eventId || ''} />
 </Base>
