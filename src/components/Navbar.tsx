@@ -25,7 +25,7 @@ export default function Navbar({ theme = 'default' }: NavbarProps) {
         <div className="navbar-container">
           {/* Logo */}
           <a href="/" className="navbar-logo">
-            FUTURE FREQUENCIES
+            resonance
           </a>
 
           {/* Desktop Navigation */}

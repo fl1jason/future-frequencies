@@ -19,7 +19,7 @@ export default function About({ theme = 'default' }: AboutProps) {
             Not chasing celebrity DJs — creating spaces where music is felt.
           </p>
           <p className="about-body">
-            Future Frequencies exists because the underground deserves better. Better sound. Better atmosphere. Better community.
+            resonance exists because the underground deserves better. Better sound. Better atmosphere. Better community.
             We believe music should move people emotionally and physically. Everything we do serves that mission.
           </p>
           <a href="#" className="about-link">

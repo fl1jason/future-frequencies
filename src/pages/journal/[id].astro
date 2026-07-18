@@ -12,8 +12,8 @@ export async function getStaticPaths() {
 
 const { id } = Astro.params;
 const article = articles.find((a) => a.id === id);
-const title = article ? `${article.title} — Future Frequencies` : 'Article Not Found';
-const description = article?.excerpt || 'Read the latest from Future Frequencies Journal';
+const title = article ? `${article.title} — resonance` : 'Article Not Found';
+const description = article?.excerpt || 'Read the latest from resonance Journal';
 ---
 
 <Base title={title} description={description}>

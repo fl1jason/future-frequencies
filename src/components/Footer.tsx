@@ -12,7 +12,7 @@ export default function Footer({ theme = 'default' }: FooterProps) {
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-brand">
-          <h3 className="footer-title">FUTURE FREQUENCIES</h3>
+          <h3 className="footer-title">resonance</h3>
         </div>
 
         <div className="footer-location">

@@ -31,7 +31,7 @@ export default function OurStory({ theme = 'default' }: OurStoryProps) {
             >
               <polygon points="5 3 19 12 5 21 5 3"></polygon>
             </svg>
-            <p>Future Frequencies Story — Coming Soon</p>
+            <p>resonance Story — Coming Soon</p>
           </div>
         </div>
       </div>
@@ -42,7 +42,7 @@ export default function OurStory({ theme = 'default' }: OurStoryProps) {
           <article className="story-body">
             <h2 className="story-section-title">The Beginning</h2>
             <p className="story-paragraph">
-              Future Frequencies was born from a simple belief: that authentic underground culture, crafted with intention and technical precision, can create moments of genuine human connection. Founded by a soundman from West London with decades of experience in the underground scene, Future Frequencies emerged as a response to the homogenization of nightlife—a place where quality sound, curated community, and real human connection could thrive.
+              resonance was born from a simple belief: that authentic underground culture, crafted with intention and technical precision, can create moments of genuine human connection. Founded by a soundman from West London with decades of experience in the underground scene, resonance emerged as a response to the homogenization of nightlife—a place where quality sound, curated community, and real human connection could thrive.
             </p>
 
             <h2 className="story-section-title">Sound First Philosophy</h2>
@@ -63,7 +63,7 @@ export default function OurStory({ theme = 'default' }: OurStoryProps) {
 
             <h2 className="story-section-title">Community First</h2>
             <p className="story-paragraph">
-              Future Frequencies is built on community, not crowds. We're selective about who joins us because we believe that authentic culture thrives when everyone in the room shares similar values: a love for quality sound, a respect for the music and the craft, and a desire for genuine human connection.
+              resonance is built on community, not crowds. We're selective about who joins us because we believe that authentic culture thrives when everyone in the room shares similar values: a love for quality sound, a respect for the music and the craft, and a desire for genuine human connection.
             </p>
             <p className="story-paragraph">
               Our community spans different backgrounds and experiences, united by a shared appreciation for deep house music and intentional, immersive experiences. We've watched friendships form on our dance floors, seen people discover new aspects of themselves through music and movement, and created a space where authenticity is valued over pretense.
@@ -79,10 +79,10 @@ export default function OurStory({ theme = 'default' }: OurStoryProps) {
 
             <h2 className="story-section-title">Looking Forward</h2>
             <p className="story-paragraph">
-              Future Frequencies is more than events—it's a movement. It's about reclaiming underground culture from commercialization and proving that authenticity, quality, and community can still thrive. It's about showing that you don't need mainstream appeal to create meaningful, memorable experiences.
+              resonance is more than events—it's a movement. It's about reclaiming underground culture from commercialization and proving that authenticity, quality, and community can still thrive. It's about showing that you don't need mainstream appeal to create meaningful, memorable experiences.
             </p>
             <p className="story-paragraph">
-              We're building something that will outlast trends. Something rooted in real passion for sound, respect for the art form, and genuine care for the people who gather with us. This is Future Frequencies—where sound first, and community thrives.
+              We're building something that will outlast trends. Something rooted in real passion for sound, respect for the art form, and genuine care for the people who gather with us. This is resonance—where sound first, and community thrives.
             </p>
           </article>
 

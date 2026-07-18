@@ -32,7 +32,7 @@ const fallbackArticles: Article[] = [
     title: 'Behind The Booth',
     image: behindBoothImg.src,
     date: 'Jul 16, 2026',
-    excerpt: 'A glimpse into the craft and intention that goes into every Future Frequencies event.',
+    excerpt: 'A glimpse into the craft and intention that goes into every resonance event.',
   },
   {
     id: 'building-systems',
