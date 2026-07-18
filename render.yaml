@@ -1,8 +1,8 @@
 services:
   - type: web
     name: future-frequencies
-    env: static
-    buildCommand: npm run build
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
     staticPublishPath: ./dist
     routes:
       - path: /*
