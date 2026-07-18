@@ -11,5 +11,8 @@ export default defineConfig({
     ssr: {
       external: ['three'],
     },
+    preview: {
+      allowedHosts: ['future-frequencies.onrender.com', 'localhost'],
+    },
   },
 });
