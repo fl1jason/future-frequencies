@@ -12,7 +12,7 @@ export default defineConfig({
       external: ['three'],
     },
     preview: {
-      allowedHosts: ['future-frequencies.onrender.com', 'localhost'],
+      allowedHosts: ['future-frequencies.onrender.com', 'www.resonanceevents.co.uk', 'resonanceevents.co.uk', 'localhost'],
     },
   },
 });
