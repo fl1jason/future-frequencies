@@ -17,5 +17,8 @@
     "react-dom": "^19.2.7",
     "three": "^0.185.1",
     "typescript": "^7.0.2"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.3"
   }
 }
