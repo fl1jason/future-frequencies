@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: future-frequencies
+    env: static
+    buildCommand: npm run build
+    staticPublishPath: ./dist
+    routes:
+      - path: /*
+        destination: /index.html
